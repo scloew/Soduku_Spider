@@ -24,17 +24,11 @@ class SodukuSpiderPipeline(object):
             (
                 item['difficulty'],
                 item['solution'],
-                item['mask'],
-                0
+                item['mask']
             )
         )
         self.conn.commit()
 
-    def process_item(self, item):
-        # self._insert(item)
-        # print("'ello governor")
-        # with open('out2.txt', 'a') as f:
-        #     f.write(item.difficulty)
-        #     f.write(item.solution)
-        #     f.write(item.mask)
+    def process_item(self, item, spider):
+        self._insert(item)
         return item

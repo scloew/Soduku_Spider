@@ -9,6 +9,6 @@ import scrapy
 
 
 class SodukuSpiderItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    difficulty = scrapy.Field()
+    solution = scrapy.Field()
+    mask = scrapy.Field()
