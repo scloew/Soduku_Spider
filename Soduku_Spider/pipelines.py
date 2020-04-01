@@ -6,6 +6,7 @@
 # See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 import pyodbc
 
+
 class SodukuSpiderPipeline(object):
 
     def __init__(self):
@@ -17,10 +18,10 @@ class SodukuSpiderPipeline(object):
         )
 
     def _insert(self, item):
+        print('inserting item')
         cursor = self.conn.cursor()
         cursor.execute(
-            'INSERT into Puzzles(difficulty, solution, mask)'
-            'values(?,?,?);',
+            'INSERT into Puzzles(difficulty, solution, mask) values(?,?,?);',
             (
                 item['difficulty'],
                 item['solution'],
